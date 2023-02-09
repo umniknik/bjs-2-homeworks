@@ -7,13 +7,11 @@ class AlarmClock {
     addClock(time, callback) {
         if (!time || !callback) {
             throw new Error('Отсутствуют обязательные аргументы');
-            // return;
         }
 
         this.alarmCollection.forEach(function (item) {
             if (item.time === time) {
                 console.warn('Уже присутствует звонок на это же время');
-                //return true;
             }
         })
 
