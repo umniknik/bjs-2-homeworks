@@ -27,8 +27,11 @@ class AlarmClock {
     }
 
     getCurrentFormattedTime() {
-        const CurrenTime = new Date();
-        return (`${CurrenTime.getHours()}:${CurrenTime.getMinutes()}`);
+        const CurrenTime = new Date().toLocaleTimeString("ru-Ru", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+          return CurrenTime;
     }
 
     start() {
@@ -60,3 +63,6 @@ class AlarmClock {
         this.alarmCollection = [];
     }
 }
+
+let aaa = new AlarmClock;
+aaa.getCurrentFormattedTime();
